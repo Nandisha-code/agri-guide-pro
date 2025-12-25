@@ -45,7 +45,7 @@ export function QuickActions({ className }: QuickActionsProps) {
   const navigate = useNavigate();
 
   return (
-    <div className={cn("grid grid-cols-2 gap-3", className)}>
+    <div className={cn("grid grid-cols-2 gap-3 md:grid-cols-1 lg:grid-cols-2", className)}>
       {actions.map((action) => (
         <button
           key={action.id}

@@ -8,46 +8,53 @@ import { BottomNav } from '@/components/BottomNav';
 import { mockWeatherData, mockMarketPrices, mockAlerts } from '@/data/mockData';
 
 const Dashboard = () => {
-  // This would come from auth/context in real app
   const farmerName = localStorage.getItem('farmerName') || 'Farmer';
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background pb-20 md:pb-8">
       <Header farmerName={farmerName} />
       
-      {/* Main content with negative margin for overlap effect */}
-      <main className="px-4 -mt-4 space-y-4">
-        {/* Weather Card */}
-        <WeatherCard weather={mockWeatherData} className="animate-fade-in" />
-        
-        {/* Crop Status */}
-        <CropStatusCard 
-          cropName="Rice (धान)"
-          daysToHarvest={45}
-          health="good"
-          className="animate-fade-in [animation-delay:0.1s]"
-        />
-        
-        {/* Quick Actions */}
-        <div className="animate-fade-in [animation-delay:0.2s]">
-          <h2 className="text-lg font-bold text-foreground mb-3">Quick Actions</h2>
-          <QuickActions />
+      {/* Main content */}
+      <main className="px-4 md:px-8 lg:px-16 -mt-4 max-w-7xl mx-auto">
+        {/* Desktop: Grid Layout */}
+        <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
+          {/* Left Column - Weather & Crop Status */}
+          <div className="space-y-4 md:space-y-6">
+            <WeatherCard weather={mockWeatherData} className="animate-fade-in" />
+            <CropStatusCard 
+              cropName="Rice (धान)"
+              daysToHarvest={45}
+              health="good"
+              className="animate-fade-in [animation-delay:0.1s]"
+            />
+          </div>
+          
+          {/* Middle Column - Quick Actions & Market Prices */}
+          <div className="mt-4 md:mt-0 space-y-4 md:space-y-6">
+            <div className="animate-fade-in [animation-delay:0.2s]">
+              <h2 className="text-lg font-bold text-foreground mb-3">Quick Actions</h2>
+              <QuickActions />
+            </div>
+            <MarketPricesCard 
+              prices={mockMarketPrices} 
+              className="animate-fade-in [animation-delay:0.3s]"
+            />
+          </div>
+          
+          {/* Right Column - Alerts (Full width on tablet) */}
+          <div className="mt-4 lg:mt-0 md:col-span-2 lg:col-span-1">
+            <AlertsCard 
+              alerts={mockAlerts}
+              className="animate-fade-in [animation-delay:0.4s]"
+            />
+          </div>
         </div>
-        
-        {/* Market Prices */}
-        <MarketPricesCard 
-          prices={mockMarketPrices} 
-          className="animate-fade-in [animation-delay:0.3s]"
-        />
-        
-        {/* Alerts */}
-        <AlertsCard 
-          alerts={mockAlerts}
-          className="animate-fade-in [animation-delay:0.4s]"
-        />
       </main>
       
-      <BottomNav />
+      {/* Bottom Nav - Mobile Only */}
+      <div className="md:hidden">
+        <BottomNav />
+      </div>
     </div>
   );
 };
