@@ -37,8 +37,8 @@ const Index = () => {
             <Sprout className="w-6 h-6 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="text-xl font-extrabold text-foreground">KisanMitra</h1>
-            <p className="text-muted-foreground text-xs">किसान मित्र</p>
+            <h1 className="text-xl font-extrabold text-foreground">Crop-Intel</h1>
+            <p className="text-muted-foreground text-xs">ಕ್ರಾಪ್-ಇಂಟೆಲ್</p>
           </div>
         </div>
         <Button variant="farmer" onClick={() => navigate('/register')}>
@@ -60,8 +60,8 @@ const Index = () => {
                 <Sprout className="w-8 h-8" />
               </div>
               <div>
-                <h1 className="text-2xl font-extrabold">KisanMitra</h1>
-                <p className="text-primary-foreground/80 text-sm">किसान मित्र</p>
+                <h1 className="text-2xl font-extrabold">Crop-Intel</h1>
+                <p className="text-primary-foreground/80 text-sm">ಕ್ರಾಪ್-ಇಂಟೆಲ್</p>
               </div>
             </div>
 
@@ -135,7 +135,7 @@ const Index = () => {
           </Button>
           
           <p className="text-center text-sm text-muted-foreground">
-            Free for all farmers • Available in Hindi & English
+            Free for all farmers • Available in Kannada & English
           </p>
         </div>
       </main>
@@ -201,7 +201,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Sprout className="w-5 h-5 text-primary" />
-            <span className="font-bold text-foreground">KisanMitra</span>
+            <span className="font-bold text-foreground">Crop-Intel</span>
           </div>
           <p className="text-xs md:text-sm text-muted-foreground text-center">
             🇮🇳 Made for Indian Farmers • Secure & Private
